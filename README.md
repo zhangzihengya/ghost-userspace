@@ -210,7 +210,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
 4. 执行指令`git clone https://ghproxy.com/https://github.com/google/ghost-kernel.git`拉去ghost-kernel代码时出现了如下问题：
 
-<div align='center'><img src="images/clone_err.png"></div>
+<div align='center'><img src="./images/clone_err.png"></div>
 
 ​		**解决办法：**直接在GitHub上下载ghost-kernel代码，并执行指令`unzip ghost-kernel-ghost-v5.11.zip`进行解压
 
