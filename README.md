@@ -20,7 +20,7 @@ ghOSt是在Linux内核之上实现的调度策略的通用委托。ghOSt框架�
 
 这不是官方支持的谷歌产品。
 
-### （二）google/ghost-userspace/README.md
+### (二)google/ghost-userspace/README.md
 
 编译好ghOSt内核后。您必须在ghOSt内核上编译和运行用户空间组件。
 
