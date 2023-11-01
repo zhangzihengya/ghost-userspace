@@ -210,7 +210,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
 4. 执行指令`git clone https://ghproxy.com/https://github.com/google/ghost-kernel.git`拉去ghost-kernel代码时出现了如下问题：
 
-<div align='center'><img src="./images/clone_err.png"></div>
+<div align='center'><img src="./image/clone_err.png"></div>
 
 ​		**解决办法：**直接在GitHub上下载ghost-kernel代码，并执行指令`unzip ghost-kernel-ghost-v5.11.zip`进行解压
 
@@ -232,7 +232,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
      - 运行指令`make -j $(nproc)`遇到报错：
 
-<div align='center'><img src="images/make_err.png"></div>
+<div align='center'><img src="image/make_err.png"></div>
 
        **报错解决：**只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
 
@@ -242,7 +242,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
      - 成功之后 /lib/modules中会有刚刚安装好的内核模块 `5.11.0+`
 
-<div align='center'><img src="images/module_install.png"></div>
+<div align='center'><img src="image/module_install.png"></div>
 
    - 安装内核：make install
 
@@ -250,7 +250,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
      - 成功之后/boot下会出现5.11.0+相关的文件
 
-<div align='center'><img src="images/boot.png"></div>
+<div align='center'><img src="image/boot.png"></div>
 
    - 修改gurb
 
@@ -264,19 +264,19 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
      - 遇到了报错：
 
-<div align='center'><img src="images/ghost_exec.png"></div>
+<div align='center'><img src="image/ghost_exec.png"></div>
 
        解决办法：发现是内存过小的问题，然后将内存调制4G
 
      - 编译成功：
 
-<div align='center'><img src="images/success.png"></div>
+<div align='center'><img src="image/success.png"></div>
 
 6. 在 Ubuntu 上安装 Bazel：https://bazel.build/install/ubuntu?hl=zh-cn
 
    安装过程可能遇到报错：
 
-<div align='center'><img src="images/install_Bazel.png"></div>
+<div align='center'><img src="image/install_Bazel.png"></div>
 
    解决办法：
 
@@ -292,7 +292,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    会遇到如下报错：
 
-<div align='center'><img src="images/Bazel_built.png"></div>
+<div align='center'><img src="image/Bazel_built.png"></div>
 
    解决办法：
 
@@ -305,7 +305,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    紧接着还会遇到报错：
 
-<div align='center'><img src="images/built_err.png"></div>
+<div align='center'><img src="image/built_err.png"></div>
 
    解决办法：
 
@@ -337,11 +337,11 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    最后编译成功：
 
-<div align='center'><img src="images/compile_success.png"></div>
+<div align='center'><img src="image/compile_success.png"></div>
 
    构建成功后，bazel-bin目录下就可以出现相应的可执行文件：
 
-<div align='center'><img src="images/bazel_bin.png"></div>
+<div align='center'><img src="image/bazel_bin.png"></div>
 
    要运行测试，直接启动测试二进制文件:
 
@@ -351,7 +351,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    运行结果：
 
-<div align='center'><img src="images/agenttest.png"></div>
+<div align='center'><img src="image/agenttest.png"></div>
 
 8. 运行ghOSt调度器
 
@@ -361,7 +361,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
      bazel build -c opt fifo_per_cpu_agent
      ```
 
-<div align='center'><img src="images/cpu_fifo.png"></div>
+<div align='center'><img src="image/cpu_fifo.png"></div>
 
    - 构建`simple_exp`，它会启动在ghOSt中运行的一系列pthread。`Simple_exp`是一个测试的集合。
 
@@ -369,7 +369,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
      bazel build -c opt simple_exp
      ```
 
-<div align='center'><img src="images/simple_exp.png"></div>
+<div align='center'><img src="image/simple_exp.png"></div>
 
    - 启动每cpu FIFO ghOSt调度器:
 
@@ -379,7 +379,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
      调度器在cpu(即逻辑内核)0和1上启动ghOSt代理，因此将ghOSt任务调度到cpu 0和1上。根据需要调整`——ghost_cpus`命令行参数值。例如，如果你有一台8核机器，你希望在所有核上调度ghOSt任务，那么将`0-7`传递给`——ghost_cpus`。
 
-<div align='center'><img src="images/ghost_cpus.png"></div>
+<div align='center'><img src="image/ghost_cpus.png"></div>
 
    - 启动`simple_exp`:
 
@@ -389,11 +389,11 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
      `Simple_exp`将启动pthread。这些pthread将依次移动到ghOSt调度类中，从而由ghOSt调度程序调度。当`simple_exp`运行完所有测试后，它将退出。
 
-<div align='center'><img src="images/pthread.png"></div>
+<div align='center'><img src="image/pthread.png"></div>
 
    - 使用`Ctrl-C`向`fifo_per_cpu_agent`发送`SIGINT`信号以使其停止。
 
-<div align='center'><img src="images/SIGINT.png"></div>
+<div align='center'><img src="image/SIGINT.png"></div>
 
 9. 用户端运行ghOSt总结
 
@@ -446,7 +446,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    例：
 
-<div align='center'><img src="images/reboot.png"></div>
+<div align='center'><img src="image/reboot.png"></div>
 
 8. 执行指令`uname -r`查看内核是否安装成功
 
