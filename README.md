@@ -10,7 +10,7 @@
 
 [45] ghOSt userspace code. https://github.com/google/ghost-userspace
 
-### （一）google/ghost-kernel /README.md
+### (一)google/ghost-kernel /README.md
 
 ghOSt是在Linux内核之上实现的调度策略的通用委托。ghOSt框架提供了一个丰富的API，用于从用户空间接收流程的调度决策，并将其作为事务来执行。程序员可以使用任何语言或工具来开发策略，这些策略可以在不重启机器的情况下进行升级。ghOSt支持一系列调度目标的策略，从µs级的延迟，到吞吐量，到能源效率等等，并为调度操作带来低开销。许多策略只是几百行代码。总的来说，ghOSt为将线程调度策略委托给用户空间进程提供了一个性能框架，从而实现了策略优化、无中断升级和故障隔离。
 
@@ -168,7 +168,7 @@ echo destroy > /sys/fs/ghost/enclave_1/ctl
 for i in /sys/fs/ghost/enclave_*/ctl; do echo destroy > $i; done
 ```
 
-### （三）复现流程
+### (三)复现流程
 
 基于ghOSt用户调度器的环境搭建：
 
@@ -417,7 +417,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    - 使用`Ctrl-C`向`调度策略代理`发送`SIGINT`信号以使其停止。
 
-### （四）编译安装内核思路梳理
+### (四)编译安装内核思路梳理
 
 **大致流程：**
 
