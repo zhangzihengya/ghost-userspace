@@ -212,13 +212,13 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
 <div align='center'><img src="./image/clone_err.png"></div>
 
-​		**解决办法：**直接在GitHub上下载ghost-kernel代码，并执行指令`unzip ghost-kernel-ghost-v5.11.zip`进行解压
+​		**解决办法**:直接在GitHub上下载ghost-kernel代码，并执行指令`unzip ghost-kernel-ghost-v5.11.zip`进行解压
 
 5. 编译安装ghOSt内核
 
    - 进入`ghost-kernel`,切换到root用户`sudo su`
 
-   - make menuconfig，**并save**
+   - make menuconfig，并save
 
      - 然后会在当前目录生成一个隐藏文件`.config`，对它进行如下修改：
        - 将`CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"`修改为`CONFIG_SYSTEM_TRUSTED_KEYS=""` 
@@ -226,7 +226,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    - 编译：`make -j $(nproc)`
 
-     - $(nproc)代表核心数，可以通过echo $(nproc)查看
+     - `$(nproc)`代表核心数，可以通过`echo $(nproc)`查看
 
      - 编译完成后，会生成vmlinux、modules*、ghost-kernel/arch/x86/boot/中会生成bzImage等
 
@@ -234,7 +234,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
 <div align='center'><img src="image/make_err.png"></div>
 
-       **报错解决：**只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
+       **报错解决**:只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
 
      - 执行如下命令可以查看都生成了哪些模块： find . -name '*.ko'
 
@@ -423,7 +423,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
 **大致流程：**
 
-1. 若无.config文件，执行指令`make menuconfig`可以直接对后面生成的.config文件根据需求进行修改，然后save，**或者**直接save生成.config文件，根据需求对该文件的内容进行修改
+1. 若无.config文件，执行指令`make menuconfig`可以直接对后面生成的.config文件根据需求进行修改，然后save，或者直接save生成.config文件，根据需求对该文件的内容进行修改
 
 2. 执行指令`make -j $(nproc)`对内核进行编译，$(nproc)代表核心数，可以通过echo $(nproc)查看，可能时间长一些
 
