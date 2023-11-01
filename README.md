@@ -7,7 +7,6 @@
 **ghOSt 的实现：**
 
 [44] ghOSt kernel code. https://github.com/google/ghost-kernel
-
 [45] ghOSt userspace code. https://github.com/google/ghost-userspace
 
 ### （一）google/ghost-kernel /README.md
