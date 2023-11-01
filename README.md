@@ -233,7 +233,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
      - 运行指令`make -j $(nproc)`遇到报错：
 
 <div align='center'><img src="image/make_err.png"></div>
-        报错解决:只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
+​		**解决办法**:只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
 
    - make modules_install
 
