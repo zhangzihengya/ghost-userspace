@@ -305,7 +305,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
    紧接着还会遇到报错：
 
-<div align='center'><img src="image/built_err.png"></div>
+<div align='center'><img src="./image/built_err.png"></div>
 
    解决办法：
 
