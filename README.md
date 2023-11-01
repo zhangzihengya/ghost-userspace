@@ -234,9 +234,7 @@ https://blog.csdn.net/weixin_44952783/article/details/128014140
 
 <div align='center'><img src="image/make_err.png"></div>
 
-报错解决:只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
-
-     - 执行如下命令可以查看都生成了哪些模块： find . -name '*.ko'
+       报错解决:只需要直接去 .config 配置文件中，将 CONFIG_DEBUG_INFO_BTF 的值，从 y 改为 n 即可解决！
 
    - make modules_install
 
