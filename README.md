@@ -2,7 +2,7 @@
 
 原[README.md](./RAW_READEME.md)
 
-# ghOSt复现
+# ghOSt 的复现
 
 **ghOSt 的实现：**
 
